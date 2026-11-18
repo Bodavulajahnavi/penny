@@ -1,21 +1,13 @@
 <div align="center">
 
 # penny.
-
-[![CI](https://github.com/Bodavulajahnavi/penny/actions/workflows/ci.yml/badge.svg)](https://github.com/Bodavulajahnavi/penny/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/license-MIT-2d684d.svg)](LICENSE)
-
 **A calm, modern personal finance & expense tracker for individuals and students.**
 
 Track income and expenses · set monthly budgets · see where your money goes
 
 **Django + SQLite** · **Next.js + PostgreSQL** · Tailwind CSS · Chart.js
 
-[Run it locally](#run-it-locally) · [Features](#features) · [Screenshots](#screenshots) · [Tech stack](#tech-stack) · [Troubleshooting](#troubleshooting)
-
 </div>
-
-![penny dashboard with balance, income, expenses, a cash-flow chart, spending breakdown, recent transactions, and monthly budgets](docs/screenshots/dashboard.jpg)
 
 ## Features
 
