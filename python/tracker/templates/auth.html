@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<main class="auth-layout">
+  <section class="auth-story">
+    <a href="/" aria-label="Penny home"><div class="brand"><svg width="34" height="34" viewBox="0 0 34 34" fill="none"><rect x="1" y="1" width="32" height="32" rx="10" fill="#2d684d"/><path d="M11 25V9h6.5a5.5 5.5 0 1 1 0 11H15" stroke="white" stroke-width="3.3" stroke-linecap="round"/></svg><span>penny<span class="brand-period">.</span></span></div></a>
+    <div class="auth-story-content"><span class="eyebrow">A LITTLE CLARITY. A LOT OF POSSIBILITY.</span><h1>Less money stress.<br>More <span>life.</span></h1><p>Your everyday finances, thoughtfully brought together. Make room for the things that matter.</p><div class="auth-preview"><div class="auth-preview-top"><span class="auth-preview-icon">↗</span><div><strong>Your money is growing.</strong><span>One small step at a time.</span></div></div><div class="auth-preview-value">$8,165<span>.55</span></div><div class="auth-preview-bottom"><span>Monthly balance</span><span>● &nbsp; Looking good</span></div></div></div>
+    <div class="auth-story-footer">Private by design. Yours by nature.</div>
+  </section>
+  <section class="auth-form-side"><div class="auth-mobile-logo"><div class="brand">penny<span class="brand-period">.</span></div></div><div class="auth-form-wrap">
+    {% if mode == 'signup' %}<span class="auth-welcome-pill">A fresh start looks good on you.</span>{% endif %}
+    <h2>{% if mode == 'signup' %}Meet your money.{% else %}Welcome back.{% endif %}</h2>
+    <p>{% if mode == 'signup' %}Create your account. Build better money habits.{% else %}A little clarity is just a sign-in away.{% endif %}</p>
+    <form class="app-form" id="auth-form" data-mode="{{ mode }}">
+      {% csrf_token %}
+      {% if mode == 'signup' %}<label>Full name<input name="name" placeholder="Alex Morgan" minlength="2" maxlength="100" autocomplete="name" required></label>{% endif %}
+      <label>Email address<input name="email" type="email" placeholder="you@example.com" autocomplete="email" maxlength="254" required></label>
+      <label>Password<input name="password" type="password" placeholder="{% if mode == 'signup' %}At least 8 characters{% else %}Enter your password{% endif %}" autocomplete="{% if mode == 'signup' %}new-password{% else %}current-password{% endif %}" minlength="{% if mode == 'signup' %}8{% endif %}" maxlength="128" required></label>
+      <div class="form-error" id="auth-error" role="alert" hidden></div>
+      <button class="button button-primary auth-submit" type="submit" aria-label="{% if mode == 'signup' %}Create account{% else %}Sign in{% endif %}"><span>→</span></button>
+    </form>
+    <div class="auth-divider"><span></span>or take a look around<span></span></div>
+    <button class="button button-secondary demo-button" id="demo-button">↗ &nbsp; Explore the demo &nbsp; →</button>
+    <p class="demo-credentials">Demo: <strong>demo@example.com</strong> / <strong>demo1234</strong></p>
+    <p class="auth-switch">{% if mode == 'signup' %}Already have an account?{% else %}New around here?{% endif %} <a href="/?view={% if mode == 'signup' %}login{% else %}signup{% endif %}">{% if mode == 'signup' %}Sign in{% else %}Create an account{% endif %} →</a></p>
+  </div><div class="auth-form-footer">A little today. A better tomorrow.<span>© penny</span></div></section>
+</main>
+{% endblock %}
+{% block scripts %}<script src="{% static 'tracker/chart.umd.min.js' %}"></script><script src="{% static 'tracker/app.js' %}" defer></script>{% endblock %}

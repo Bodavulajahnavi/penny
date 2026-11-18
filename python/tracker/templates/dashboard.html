@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand"><a href="/" aria-label="Penny overview"><div class="brand"><svg width="34" height="34" viewBox="0 0 34 34" fill="none"><rect x="1" y="1" width="32" height="32" rx="10" fill="#2d684d"/><path d="M11 25V9h6.5a5.5 5.5 0 1 1 0 11H15" stroke="white" stroke-width="3.3" stroke-linecap="round"/></svg><span>penny<span class="brand-period">.</span></span></div></a><button class="icon-button mobile-sidebar-close" id="close-sidebar" aria-label="Close navigation">×</button></div>
+    <div class="workspace-label">YOUR WORKSPACE</div>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a class="nav-item" data-view="overview" href="/"><span data-icon="overview"></span>Overview</a>
+      <a class="nav-item" data-view="transactions" href="/?view=transactions"><span data-icon="transactions"></span>Transactions<span class="nav-count" id="nav-count"></span></a>
+      <a class="nav-item" data-view="budgets" href="/?view=budgets"><span data-icon="budgets"></span>Budgets</a>
+      <a class="nav-item" data-view="reports" href="/?view=reports"><span data-icon="reports"></span>Reports</a>
+      <a class="nav-item" data-view="settings" href="/?view=settings"><span data-icon="settings"></span>Settings</a>
+    </nav>
+    <div class="sidebar-bottom"><div class="sidebar-encouragement"><h3>Small steps.<br>Big possibilities.</h3><p>A little today goes a long way.</p><a class="text-button" href="/?view=reports">Explore your insights ↗</a></div><button class="sidebar-help" id="help-button">? &nbsp; Help & getting started &nbsp; ↗</button><button class="sidebar-profile" id="sidebar-profile"><span class="avatar" id="sidebar-avatar">AM</span><span><strong id="sidebar-name">Alex Morgan</strong><small>Personal account</small></span><span>⌄</span></button></div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar"><div class="topbar-left"><button class="icon-button mobile-menu" id="open-sidebar" aria-label="Open navigation">☰</button><span class="breadcrumb-home">▦</span><span class="breadcrumb-slash">/</span><span class="breadcrumb-current" id="breadcrumb">Overview</span></div><div class="topbar-right"><div class="global-search"><span data-icon="search"></span><input id="global-search" placeholder="Search transactions..." aria-label="Search transactions"><kbd>/</kbd><button id="clear-search" aria-label="Clear search" hidden>×</button></div><button class="icon-button" id="notifications" aria-label="Notifications">♧</button><span class="topbar-divider"></span><button class="top-profile" id="profile-button" aria-label="Account menu"><span class="avatar" id="top-avatar">AM</span><span>⌄</span></button></div></header>
+    <main class="main-content">
+      <div class="page-heading"><div><div class="welcome-title"><h1 id="page-title">Welcome back, Alex</h1><span class="welcome-sun" id="welcome-sun">☀</span></div><p id="page-subtitle">Let’s make every penny count.</p></div><div class="page-actions"><div class="month-picker"><button class="month-arrow" id="previous-month" aria-label="Previous month">‹</button><label class="month-current"><span data-icon="calendar"></span><input id="month-input" type="month" value="{{ month }}" min="2000-01" max="2099-12" aria-label="Select month"></label><button class="month-arrow" id="next-month" aria-label="Next month">›</button></div><button class="button button-primary" id="main-action" aria-label="Add transaction">+ &nbsp; Add transaction</button></div></div>
+      <div id="page-content"><div class="card chart-loading"><div class="skeleton skeleton-title"></div><div class="skeleton skeleton-chart"></div></div></div>
+      <footer class="workspace-footer"><span>♧ &nbsp; A little more clarity. A little less worry.</span><span id="footer-status">All changes saved</span></footer>
+    </main>
+  </div>
+</div>
+<div class="modal-overlay" id="modal-overlay" hidden><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-heading"><div><h2 id="modal-title"></h2><p id="modal-subtitle"></p></div><button class="icon-button" id="close-modal" aria-label="Close dialog">×</button></div><div id="modal-content"></div></section></div>
+<div id="notifications-popover" class="popover notifications-popover" hidden></div>
+<div id="profile-popover" class="popover profile-popover" hidden></div>
+{% endblock %}
+{% block scripts %}
+{{ initial_data|json_script:'penny-data' }}<script>window.PENNY_VIEW = "{{ initial_view }}"; window.PENNY_MONTH = "{{ month }}";</script>
+<script src="{% static 'tracker/chart.umd.min.js' %}"></script><script src="{% static 'tracker/app.js' %}" defer></script>
+{% endblock %}
