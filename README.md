@@ -26,7 +26,7 @@ Track income and expenses · set monthly budgets · see where your money goes
 
 | Budgets | Reports |
 | --- | --- |
-| ![Monthly budgets with progress bars](<img width="1385" height="785" alt="image" src="https://github.com/user-attachments/assets/14d87949-7a79-41cb-ac0a-7117e91d7344" />
+| ![Monthly budgets with progress bars](<img width="138" height="78" alt="image" src="https://github.com/user-attachments/assets/14d87949-7a79-41cb-ac0a-7117e91d7344" />
 ) | ![Reports with savings rate and six-month history](docs/screenshots/reports.jpg) |
 | **Add a transaction** | **Sign in** |
 | ![Add transaction dialog](docs/screenshots/add-transaction.jpg) | ![Sign-in screen](docs/screenshots/sign-in.jpg) |
