@@ -24,14 +24,13 @@ Track income and expenses · set monthly budgets · see where your money goes
 
 ## Screenshots
 
-| Budgets | Reports |
-| --- | --- |
-| !(<img width="637" height="415" alt="image" src="https://github.com/user-attachments/assets/14d87949-7a79-41cb-ac0a-7117e91d7344" />
-) | ![Reports with savings rate and six-month history](docs/screenshots/reports.jpg) |
-| **Add a transaction** | **Sign in** |
-| ![Add transaction dialog](docs/screenshots/add-transaction.jpg) | ![Sign-in screen](docs/screenshots/sign-in.jpg) |
+<img width="1375" height="786" alt="image" src="https://github.com/user-attachments/assets/2aed9ebf-5a65-4dd6-aa32-26ed80a11222" />
+<img width="1377" height="786" alt="image" src="https://github.com/user-attachments/assets/d811936c-e2f1-44a0-8c6c-a6503593aa47" />
+<img width="1380" height="785" alt="image" src="https://github.com/user-attachments/assets/da123e9c-a3e8-4329-a9ad-119a01664fe7" />
+<img width="1378" height="782" alt="image" src="https://github.com/user-attachments/assets/61532f56-d84a-4eb2-824d-86f0cde8c2d0" />
+<img width="1377" height="787" alt="image" src="https://github.com/user-attachments/assets/a6e51468-5ab5-4e96-a4c3-5ceee577c947" />
+<img width="1381" height="790" alt="image" src="https://github.com/user-attachments/assets/1e813391-6481-4b46-a5e7-28c6acc18b37" />
 
-<p align="center"><img src="docs/screenshots/mobile.jpg" alt="penny on a phone" width="300"></p>
 
 ## Run it locally
 
